@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "castle-haozijunqaq-utils": "^2.0.2",
+    "castle-haozijunqaq-utils": "^2.0.3",
     "core-js": "^3.6.4",
     "fastclick": "^1.0.6",
     "lbd-oss-sdk": "^1.0.4",
