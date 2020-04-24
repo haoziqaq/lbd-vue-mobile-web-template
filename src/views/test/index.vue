@@ -23,6 +23,7 @@
 
 <script>
   import { List, Cell } from 'vant';
+
   export default {
     name: "index",
     data: () => ({
