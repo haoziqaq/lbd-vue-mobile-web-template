@@ -24,3 +24,8 @@ export function resetBGM() {
   audio.currentTime = 0;
   audio.pause();
 }
+
+export function pauseBGM() {
+  let audio = document.getElementById('bgm');
+  audio.pause();
+}
