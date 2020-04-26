@@ -12,6 +12,7 @@ export function createBGM(src) {
     audio.play();
   });
   document.body.appendChild(audio);
+  audio.play();
 }
 
 export function playBGM() {
