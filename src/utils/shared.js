@@ -70,3 +70,7 @@ export function removeItem(arr, item) {
     }
   }
 }
+
+export function hasOwn(val, key) {
+  return Object.prototype.hasOwnProperty.call(val, key);
+}
