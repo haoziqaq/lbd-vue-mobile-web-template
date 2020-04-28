@@ -35,3 +35,40 @@
 /.env.development -> 开发环境配置
 /.env.production -> 生产环境配置
 ```
+
+```
+2. 多环境配置(注意: $属于特殊字符，需要转义\$)
+VUE_APP_NAME = '应用名称'
+VUE_APP_BASE_URL = '后端接口地址'
+VUE_APP_STATIC_URL = '后端静态资源地址'
+VUE_APP_WX_CONFIG_URL = '微信SDK配置地址'
+VUE_APP_SERVER_ENV = '服务端环境标识'
+
+VUE_APP_REMOTE_HOST = '远程主机'
+VUE_APP_REMOTE_PORT = '远程主机端口'
+VUE_APP_REMOTE_USER= '远程主机用户名'
+VUE_APP_REMOTE_PASS= '远程主机密码'
+VUE_APP_REMOTE_PATH= '远程主机部署路径' 如 /web/project-name/
+
+VUE_APP_OSS_PATH = 'oss目录' 如: /project-name/
+VUE_APP_OSS_KEY = 'oss key'
+VUE_APP_OSS_SECRET = 'oss secret'
+VUE_APP_OSS_REGION = 'oss区域' 如: oss-cn-beijing
+VUE_APP_OSS_BUCKET = 'bucket名称' 注意: 是名称，不是bucket访问域名
+```
+
+```
+3.运行脚本
+"scripts": {
+    //启动开发环境
+    "serve": "vue-cli-service serve", 
+    //应用打包构建
+    "build": "vue-cli-service build", 
+    //应用打包构建成资源指向oss的包
+    "build:oss": "vue-cli-service build --oss",
+    //应用打包构建并发布到公司服务器
+    "publish": "vue-cli-service build --publish",
+    //应用打包构建成资源指向oss的包并发布资源到oss,发布程序入口到公司服务器.
+    "publish:oss": "vue-cli-service build --publish --oss" 
+  },
+```

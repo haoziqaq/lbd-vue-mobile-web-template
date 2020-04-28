@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build:oss": "vue-cli-service build --oss",
+    "publish": "vue-cli-service build --publish",
+    "publish:oss": "vue-cli-service build --publish --oss"
   },
   "dependencies": {
     "castle-haozijunqaq-utils": "^2.0.3",
@@ -28,7 +31,9 @@
     "sass-loader": "^8.0.2",
     "style-resources-loader": "^1.3.2",
     "vue-cli-plugin-style-resources-loader": "~0.1.4",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-aliyun-oss": "^0.2.5",
+    "webpack-deploy-plugin": "^1.0.3"
   },
   "browserslist": [
     "> 1%",
