@@ -78,7 +78,7 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
+    }
   },
   pluginOptions: {
     'style-resources-loader': {

@@ -6,50 +6,33 @@
 <template>
   <div class="main-container">
     <h1 class="title">{{ time | formatDate('yyyy-MM-dd HH:mm:ss') }}</h1>
-    <list
-      v-model="loading"
-      :finished="finished"
-      finished-text="没有更多了"
-      @load="getList"
-    >
-      <cell
-        v-for="item in list"
-        :key="item"
-        :title="item"
-      />
-    </list>
+    <div class="block" v-finger:swipe="handleFinger">Swipe</div>
+    <div class="block" v-finger:tap="handleFinger">Tap</div>
+    <div class="block" v-finger:single-tap="handleFinger">singleTap</div>
+    <div class="block" v-finger:double-tap="handleFinger">doubleTap</div>
+    <div class="block" v-finger:long-tap="handleFinger">longTap</div>
+    <div class="block" v-finger:touch-start="handleFinger">touchStart</div>
+    <div class="block" v-finger:touch-move="handleFinger">touchMove</div>
+    <div class="block" v-finger:touch-end="handleFinger">touchEnd</div>
+    <div class="block" v-finger:touch-cancel="handleFinger">touchCancel</div>
+    <div class="block" v-finger:pinch="handleFinger">pinch</div>
+    <div class="block" v-finger:press-move="handleFinger">pressMove</div>
+    <div class="block" v-finger:rotate="handleFinger">rotate</div>
+    <div class="block" v-finger:multipoint-start="handleFinger">multipointStart</div>
   </div>
 </template>
 
 <script>
-  import { List, Cell } from 'vant';
-
+  import { Toast } from 'vant'
   export default {
     name: "index",
     data: () => ({
       time: new Date(),
-      list: [],
-      loading: false,
-      finished: false,
     }),
-    components: {
-      List,
-      Cell,
-    },
     methods: {
-      getList() {
-        setTimeout(() => {
-          for (let i = 0; i < 10; i++) {
-            this.list.push(this.list.length + 1);
-          }
-          // 加载状态结束
-          this.loading = false;
-          // 数据全部加载完成
-          if (this.list.length >= 40) {
-            this.finished = true;
-          }
-        }, 1000);
-      }
+      handleFinger(e) {
+        Toast('trigger');
+      },
     }
   }
 </script>
@@ -63,6 +46,18 @@
 
     .title {
       color: $color-primary;
+    }
+
+    .block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      background: $color-primary;
+      margin-top: .1rem;
+      font-size: .32rem;
+      color: #fff;
     }
   }
 </style>

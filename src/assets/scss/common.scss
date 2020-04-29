@@ -48,6 +48,10 @@ button {
   -webkit-line-clamp: 3;
 }
 
+.prevent-pointer-events {
+  pointer-events: none;
+}
+
 .wave {
   position: relative;
   overflow: hidden;

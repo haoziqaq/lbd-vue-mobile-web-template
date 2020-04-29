@@ -72,3 +72,20 @@ VUE_APP_OSS_BUCKET = 'bucket名称' 注意: 是名称，不是bucket访问域名
     "publish:oss": "vue-cli-service build --publish --oss" 
   },
 ```
+
+```
+4.集成手势库
+    v-finger:swipe 滑动手势触发
+    v-finger:tap 点击手势触发
+    v-finger:single-tap 单击手势触发
+    v-finger:double-tap 双击手势触发
+    v-finger:long-tap 长按手势触发
+    v-finger:touch-start 手指按下触发
+    v-finger:touch-move 手指移动触发
+    v-finger:touch-end  手指抬起触发
+    v-finger:touch-cancel 手指按下并移出元素(取消点击)触发
+    v-finger:pinch 双指挤压，缩放手势触发
+    v-finger:press-move 按住移动触发
+    v-finger:rotate 双指旋转触发
+    v-finger:multipoint-start 多点进入元素触发
+```

@@ -10,6 +10,7 @@
     "publish:oss": "vue-cli-service build --publish --oss"
   },
   "dependencies": {
+    "alloyfinger": "^0.1.16",
     "castle-haozijunqaq-utils": "^2.0.3",
     "core-js": "^3.6.4",
     "fastclick": "^1.0.6",
