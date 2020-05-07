@@ -1,5 +1,5 @@
 import { Toast } from 'vant'
-import { codeHandlers, notPromptMessageCode } from "./code";
+import { codeHandlers, notPromptMessageCode } from "./utils";
 
 export default async function (response) {
   if (response?.status === 200) {

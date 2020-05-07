@@ -24,7 +24,7 @@
 /src/api -> 每个请求抽成一个函数，放在这里。
 /src/assets/* -> 静态资源放这里, 如图标，图片，视频，音频，样式文件。
 /src/assets/variable.scss -> 全局变量样式文件
-/src/axios/code.js -> 后端返回状态码相关
+/src/axios/utils.js -> 后端返回状态码相关
 /src/backup -> 备份文件
 /src/components -> 自定义的全局组件,放在里面，已实现自动注册。
 /src/router/index.js -> 路由拦截器和路由配置文件，已实现自动路由配置，只关心拦截。

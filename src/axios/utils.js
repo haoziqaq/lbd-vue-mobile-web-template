@@ -31,3 +31,31 @@ export const notPromptMessageCode = [
   CODE.getValue('SUCCESS'),
   CODE.getValue('NEED_WX_AUTHENTICATION'),
 ];
+
+export function useRequest(request) {
+  return new Promise(((resolve, reject) => {
+    request
+      .then(({ data }) => {
+        if (data?.code === CODE.getValue('SUCCESS')) {
+          resolve({
+            isSuccess: true,
+            data,
+            errorMessage: null,
+          })
+        } else {
+          resolve({
+            isSuccess: false,
+            data,
+            errorMessage: null,
+          });
+        }
+      })
+      .catch((errorMessage) => {
+        reject({
+          isSuccess: false,
+          data: null,
+          errorMessage: JSON.stringify(errorMessage)
+        })
+      })
+  }))
+}
