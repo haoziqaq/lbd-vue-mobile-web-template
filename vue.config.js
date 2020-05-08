@@ -1,6 +1,7 @@
 const path = require("path");
 const WebpackDeployPlugin = require('webpack-deploy-plugin');
 const WebpackAliyunOSS = require('webpack-aliyun-oss');
+const WebpackCopyPlugin = require('copy-webpack-plugin');
 const OUTPUT_DIR = 'dist'
 const argv = process.argv;
 
@@ -10,9 +11,10 @@ const isBuildNormal = process.env.NODE_ENV === 'production' && !argv.includes('-
 const isBuildOSS = process.env.NODE_ENV === 'production' && !argv.includes('--publish') && argv.includes('--oss');
 
 function createWebpackPlugins() {
+  let basePlugins = [];
   if (isPublishOSS) {
     // 发布到oss的策略
-    return [
+    basePlugins.push(
       new WebpackDeployPlugin({
         assetsPath: path.resolve(`./${OUTPUT_DIR}/index.html`),
         host: process.env.VUE_APP_REMOTE_HOST,
@@ -35,10 +37,10 @@ function createWebpackPlugins() {
           return filePath.substring(filePath.indexOf(OUTPUT_DIR) + OUTPUT_DIR.length);
         },
       })
-    ]
+    )
   } else if (isPublishNormal) {
     // 发布到企业服务器的策略
-    return [
+    basePlugins.push(
       new WebpackDeployPlugin({
         assetsPath: path.resolve(`./${OUTPUT_DIR}/`),
         host: process.env.VUE_APP_REMOTE_HOST,
@@ -47,11 +49,9 @@ function createWebpackPlugins() {
         password: process.env.VUE_APP_REMOTE_PASS,
         targetPath: process.env.VUE_APP_REMOTE_PATH,
       }),
-    ]
-  } else {
-    // 开发环境运行，以及不发布的构建项目
-    return []
+    );
   }
+  return basePlugins;
 }
 function createWebpackPublicPath() {
   if (isPublishOSS || isBuildOSS) {
