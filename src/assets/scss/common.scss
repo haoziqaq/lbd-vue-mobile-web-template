@@ -35,17 +35,23 @@ button {
 }
 
 .ell2 {
-  overflow : hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;//规定几行显示省略号
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .ell3 {
-  overflow : hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
   -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .prevent-pointer-events {
@@ -86,5 +92,10 @@ button {
 
 .van-list {
   width: 100%;
+}
+
+.van-popup {
+  background: transparent;
+  overflow: visible;
 }
 
