@@ -24,6 +24,7 @@
 
 <script>
   import { Toast } from 'vant'
+  import { findComponentsDownward } from "../../utils/componentHelper";
   export default {
     name: "index",
     data: () => ({
@@ -33,6 +34,9 @@
       handleFinger(e) {
         Toast('trigger');
       },
+    },
+    mounted() {
+
     }
   }
 </script>
