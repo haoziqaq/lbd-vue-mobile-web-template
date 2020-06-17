@@ -5,7 +5,7 @@
  */
 
 /**
- * 向下找到最近的组件
+ * 向上找到最近的组件
  * @param context 当前组件实例
  * @param componentName 想找的组件名
  * @returns {Vue | null}

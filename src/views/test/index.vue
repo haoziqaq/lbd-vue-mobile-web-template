@@ -5,7 +5,7 @@
 */
 <template>
   <div class="main-container">
-    <h1 class="title">{{ time | formatDate('yyyy-MM-dd HH:mm:ss') }}</h1>
+    <h1 class="title" @click="notice">{{ time | formatDate('yyyy-MM-dd HH:mm:ss') }}</h1>
     <div class="block" v-finger:swipe="handleFinger">Swipe</div>
     <div class="block" v-finger:tap="handleFinger">Tap</div>
     <div class="block" v-finger:single-tap="handleFinger">singleTap</div>
@@ -24,7 +24,6 @@
 
 <script>
   import { Toast } from 'vant'
-  import { findComponentsDownward } from "../../utils/componentHelper";
   export default {
     name: "index",
     data: () => ({
@@ -35,14 +34,12 @@
         Toast('trigger');
       },
     },
-    mounted() {
-
-    }
   }
 </script>
 
 <style scoped lang="scss">
   .main-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

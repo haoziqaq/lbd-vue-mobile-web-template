@@ -14,7 +14,8 @@ import './assets/scss/common.scss'
 
 Toast.setDefaultOptions('loading', { forbidClick: true, duration: 0 });
 
-FastClick.attach(document.body);
+// 点击代理
+// FastClick.attach(document.body);
 Vue.config.productionTip = false;
 
 Vue.use(vuePlugin)
@@ -27,3 +28,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
