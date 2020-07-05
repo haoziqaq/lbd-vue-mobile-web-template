@@ -21,7 +21,7 @@ Vue.config.productionTip = false;
 Vue.use(vuePlugin)
   .use(AlloyFingerPlugin, {
     AlloyFinger
-  });
+  })
 
 new Vue({
   router,
