@@ -1,5 +1,5 @@
 ```
-nginx转发socket服务
+step:1 nginx转发socket服务
 location /sockjs-node {
       proxy_set_header X-Real-IP  $remote_addr;
       proxy_set_header X-Forwarded-For $remote_addr;
@@ -13,7 +13,7 @@ location /sockjs-node {
 ```
 
 ```
-修改createSocketUrl.js
+step:2 修改createSocketUrl.js
 var config = {
   protocol: 'https',
   hostname: 'tools.goosdk.com',
@@ -23,6 +23,10 @@ var config = {
 ```
 
 ```
-修改Server.js
+step3: 修改Server.js
 const SOCK_PATH = '/sockjs-node'
+```
+
+```
+step4: 传到nginx服务器安装node_modules依赖之后执行so.sh脚本进行热更新源码修改
 ```
