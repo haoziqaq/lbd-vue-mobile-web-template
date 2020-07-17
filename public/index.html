@@ -6,6 +6,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= webpackConfig.name %></title>
+    <style>
+      @keyframes loading {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      #loading-modal {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        z-index: 9999;
+      }
+
+      .loading {
+        width: 50px;
+        height: 50px;
+        animation: loading .6s infinite linear;
+      }
+    </style>
   </head>
   <body>
     <noscript>
@@ -13,5 +39,14 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <div id="loading-modal">
+      <img class="loading" src="./loading.png">
+    </div>
+    <script>
+      window.onload = function () {
+        var loadingModal = document.getElementById('loading-modal')
+        document.body.removeChild(loadingModal);
+      }
+    </script>
   </body>
 </html>
