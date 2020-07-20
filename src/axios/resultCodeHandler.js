@@ -1,12 +1,12 @@
 import { Toast } from 'vant'
-import { codeHandlers, notPromptMessageCode } from "./utils";
+import { CodeHandlers, notPromptMessageCodes } from "./utils";
 
 export default async function (response) {
   if (response?.status === 200) {
     const responseCode = response?.data?.code;
     const responseMessage = response?.data?.msg;
-    codeHandlers.has(responseCode) && codeHandlers.get(responseCode)(response);
-    if (!notPromptMessageCode.includes(responseCode)) {
+    CodeHandlers[responseCode] && CodeHandlers[responseCode](response);
+    if (!notPromptMessageCodes.includes(responseCode)) {
       responseMessage && Toast(responseMessage);
     }
   } else {

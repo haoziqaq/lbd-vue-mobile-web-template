@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VConsole from 'vconsole'
 import FastClick from 'fastclick'
 import AlloyFinger from 'alloyfinger'
 import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue'
@@ -28,4 +29,8 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
+if (process.env.NODE_ENV === 'development') {
+  new VConsole();
+}
 
