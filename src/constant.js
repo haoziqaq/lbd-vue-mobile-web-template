@@ -17,3 +17,9 @@ export const UploadStates = {
   //上传完成
   DONE: 'done'
 }
+
+export const UploadStateMessages = {
+  [UploadStates.UPLOADING]: '上传中',
+  [UploadStates.FAILED]: '上传失败',
+  [UploadStates.DONE]: '上传完成'
+}
