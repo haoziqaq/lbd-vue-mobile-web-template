@@ -9,7 +9,7 @@ import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue'
 import { vuePlugin } from "castle-haozijunqaq-utils";
 import { Toast } from 'vant'
 import './components/componentRegister'
-import './utils/fixIosInput'
+import './utils/fixWechatBug'
 import './utils/rem'
 import './assets/scss/common.scss'
 
