@@ -31,7 +31,7 @@ export const CodeHandlers = {
 /**
  * @des 不需要提示的状态码
  */
-export const notPromptMessageCodes = [
+export const NotPromptMessageCodes = [
   Codes.SUCCESS,
   Codes.NEED_WX_AUTHENTICATION,
 ];
