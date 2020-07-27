@@ -21,6 +21,11 @@ import EXIF from 'exif-js';
   true
 );
 
+/**
+ * 去除浏览器对exif信息的副作用，合理化图片旋转方向
+ * @param file 文件
+ * @returns {Promise<string>} base64字符串
+ */
 export function fixImageRotate(file) {
   return new Promise(resolve => {
     EXIF.getData(file, function() {
