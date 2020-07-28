@@ -1,7 +1,6 @@
 const path = require("path");
 const WebpackDeployPlugin = require('webpack-deploy-plugin');
 const WebpackAliyunOSS = require('webpack-aliyun-oss');
-const WebpackCopyPlugin = require('copy-webpack-plugin');
 const OUTPUT_DIR = 'dist'
 const argv = process.argv;
 
