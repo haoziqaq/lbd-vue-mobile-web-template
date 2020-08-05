@@ -26,7 +26,7 @@
   export default {
     name: "index",
     data: () => ({
-      time: new Date(),
+      time: new Date()
     }),
     methods: {
       handleFinger(e) {
