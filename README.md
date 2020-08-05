@@ -89,3 +89,9 @@ VUE_APP_OSS_BUCKET = 'bucket名称' 注意: 是名称，不是bucket访问域名
     v-finger:rotate 双指旋转触发
     v-finger:multipoint-start 多点进入元素触发
 ```
+
+```
+5.命令行使用
+lbd create <项目名> -> 创建项目
+lbd mv <路由地址> [文件名] [模板类型](simple, list, detail, form)
+```
