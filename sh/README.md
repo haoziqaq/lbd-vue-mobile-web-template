@@ -29,4 +29,5 @@ const SOCK_PATH = '/sockjs-node'
 
 ```
 step4: 传到nginx服务器安装node_modules依赖之后执行so.sh脚本进行热更新源码修改
+(如遇到权限问题对sh执行权限命令 chmod 764 ./sh/so.sh)
 ```
