@@ -11,6 +11,7 @@ import { Toast } from 'vant'
 import './components/componentRegister'
 import './utils/fixWechatBug'
 import './utils/rem'
+import 'normalize.css'
 import './assets/scss/common.scss'
 
 Toast.setDefaultOptions('loading', { forbidClick: true, duration: 0 });
