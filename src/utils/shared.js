@@ -5,7 +5,7 @@
  */
 
 export function toRawType(v) {
-  return Object.prototype.toString.call(v).slice(8, -1);
+  return Object.prototype.toString.call(v).slice(8, -1)
 }
 
 export function isUndef(v) {
@@ -54,7 +54,7 @@ export function isPromise(v) {
 }
 
 export function toString(v) {
-  return isPrimitive(v) ? String(v) : JSON.stringify(v);
+  return isPrimitive(v) ? String(v) : JSON.stringify(v)
 }
 
 export function toNumber(v) {
@@ -72,7 +72,7 @@ export function removeItem(arr, item) {
 }
 
 export function hasOwn(val, key) {
-  return Object.prototype.hasOwnProperty.call(val, key);
+  return Object.prototype.hasOwnProperty.call(val, key)
 }
 
 export function getKey(obj, value) {

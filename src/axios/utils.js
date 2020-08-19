@@ -4,14 +4,12 @@
  * @Date 2020/4/21
  */
 
-import { toOptions } from '../utils/shared';
-
 /**
  * @des 后端状态码枚举
  */
 export const Codes = {
   SUCCESS: 200,
-  NEED_WX_AUTHENTICATION: 301,
+  NEED_WX_AUTHENTICATION: 301
 }
 
 export const CodeMessages = {
@@ -24,7 +22,7 @@ export const CodeMessages = {
  */
 export const CodeHandlers = {
   [Codes.NEED_WX_AUTHENTICATION]: ({ data }) => {
-    window.location.href = data?.data?.jump ?? '';
+    window.location.href = data?.data?.jump ?? ''
   }
 }
 
@@ -33,8 +31,8 @@ export const CodeHandlers = {
  */
 export const NotPromptMessageCodes = [
   Codes.SUCCESS,
-  Codes.NEED_WX_AUTHENTICATION,
-];
+  Codes.NEED_WX_AUTHENTICATION
+]
 
 export function useRequest(request) {
   return new Promise(((resolve, reject) => {
@@ -44,14 +42,14 @@ export function useRequest(request) {
           resolve({
             isSuccess: true,
             data,
-            errorMessage: null,
+            errorMessage: null
           })
         } else {
           resolve({
             isSuccess: false,
             data,
-            errorMessage: null,
-          });
+            errorMessage: null
+          })
         }
       })
       .catch((errorMessage) => {

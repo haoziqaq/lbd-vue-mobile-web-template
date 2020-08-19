@@ -22,42 +22,43 @@
 </template>
 
 <script>
-  import { Toast } from 'vant'
-  export default {
-    name: "index",
-    data: () => ({
-      time: new Date()
-    }),
-    methods: {
-      handleFinger(e) {
-        Toast('trigger');
-      },
+import { Toast } from 'vant'
+
+export default {
+  name: 'index',
+  data: () => ({
+    time: new Date()
+  }),
+  methods: {
+    handleFinger(e) {
+      Toast('trigger')
     },
   }
+}
 </script>
 
-<style scoped lang="scss">
-  .main-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+<style lang="scss" scoped>
+.main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 
-    .title {
-      color: $color-primary;
-    }
-
-    .block {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 4rem;
-      height: 4rem;
-      background: $color-primary;
-      margin-top: .1rem;
-      font-size: .32rem;
-      color: #fff;
-    }
+  .title {
+    color: $color-primary;
   }
+
+  .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: $color-primary;
+    margin-top: .1rem;
+    font-size: .32rem;
+    color: #fff;
+  }
+}
 </style>
