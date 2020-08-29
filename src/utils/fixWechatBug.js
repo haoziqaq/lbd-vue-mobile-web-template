@@ -38,39 +38,41 @@ export function fixImageRotate(file) {
       // 将图片2将转成 base64 格式
       reader.readAsDataURL(this)
       reader.onloadend = function() {
-        const img = new Image()
-        img.src = reader.result
-        const width = img.width
-        const height = img.height
-        let canvas = document.createElement('canvas')
-        let ctx = canvas.getContext('2d')
-        switch (Number(Orientation)) {
-          case 3:
-            canvas.width = width
-            canvas.height = height
-            ctx.rotate(Math.PI / 180 * 180)
-            ctx.drawImage(img, 0, 0, img.width, img.height, -img.width, -img.height, img.width, img.height)
-            break
-          case 6:
-            canvas.width = height
-            canvas.height = width
-            ctx.rotate(Math.PI / 180 * 90)
-            ctx.drawImage(img, 0, 0, img.width, img.height, 0, -img.height, img.width, img.height)
-            break
-          case 8:
-            canvas.width = height
-            canvas.height = width
-            ctx.rotate(Math.PI / 180 * -90)
-            ctx.drawImage(img, 0, 0, img.width, img.height, -img.width, 0, img.width, img.height)
-            break
-          default:
-            canvas.width = width
-            canvas.height = height
-            ctx.drawImage(img, 0, 0)
-            break
+        let img = new Image()
+        img.onload = function() {
+          const width = img.width
+          const height = img.height
+          let canvas = document.createElement('canvas')
+          let ctx = canvas.getContext('2d')
+          switch (Number(Orientation)) {
+            case 3:
+              canvas.width = width
+              canvas.height = height
+              ctx.rotate(Math.PI / 180 * 180)
+              ctx.drawImage(img, 0, 0, img.width, img.height, -img.width, -img.height, img.width, img.height)
+              break
+            case 6:
+              canvas.width = height
+              canvas.height = width
+              ctx.rotate(Math.PI / 180 * 90)
+              ctx.drawImage(img, 0, 0, img.width, img.height, 0, -img.height, img.width, img.height)
+              break
+            case 8:
+              canvas.width = height
+              canvas.height = width
+              ctx.rotate(Math.PI / 180 * -90)
+              ctx.drawImage(img, 0, 0, img.width, img.height, -img.width, 0, img.width, img.height)
+              break
+            default:
+              canvas.width = width
+              canvas.height = height
+              ctx.drawImage(img, 0, 0)
+              break
+          }
+          const fileBase64 = canvas.toDataURL(imgType)
+          resolve(fileBase64)
         }
-        const fileBase64 = canvas.toDataURL(imgType)
-        resolve(fileBase64)
+        img.src = reader.result
       }
     })
   })
