@@ -9,21 +9,21 @@
         :index="0"
         background-color="red"
       >
-        <div class="page-1 animate__animated animate__slideInLeft">背景颜色案例</div>
+        <div class="page animate__animated animate__slideInLeft">背景颜色案例</div>
       </lbd-vertical-swiper-slide>
       <lbd-vertical-swiper-slide
         :background-image="require('./bg.jpg')"
         :index="1"
         background-color="yellow"
       >
-        <div class="page-1 animate__animated animate__slideInLeft">背景图片案例</div>
+        <div class="page animate__animated animate__slideInLeft">背景图片案例</div>
       </lbd-vertical-swiper-slide>
       <lbd-vertical-swiper-slide
         :index="2"
         background-color="blue"
         :no-swipe="noSwipe"
       >
-        <div class="page-2 animate__animated animate__slideInRight">
+        <div class="page animate__animated animate__slideInRight">
           <div>点击禁止滑动案例</div>
           <div @click="noSwipe = !noSwipe">no swipe {{ noSwipe }}</div>
         </div>
@@ -32,7 +32,7 @@
         :index="3"
         background-color="green"
       >
-        <div class="page-2 animate__animated animate__slideInRight">
+        <div class="page animate__animated animate__slideInRight">
           <div @click="to">点击跳转第一页案例</div>
         </div>
       </lbd-vertical-swiper-slide>
@@ -66,7 +66,7 @@ body {
   padding: 0;
 }
 
-.page-1, .page-2 {
+.page {
   display: flex;
   flex-direction: column;
   width: 100vw;
