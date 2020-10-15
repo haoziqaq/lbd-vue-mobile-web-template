@@ -1,63 +1,79 @@
-/**
-* @description 测试文件
-* @author 齐皓
-* @Date 2020/4/21
-*/
 <template>
   <div class="main-container">
-    <div class="block" v-finger:swipe="handleFinger">Swipe</div>
-    <div class="block" v-finger:tap="handleFinger">Tap</div>
-    <div class="block" v-finger:single-tap="handleFinger">singleTap</div>
-    <div class="block" v-finger:double-tap="handleFinger">doubleTap</div>
-    <div class="block" v-finger:long-tap="handleFinger">longTap</div>
-    <div class="block" v-finger:touch-start="handleFinger">touchStart</div>
-    <div class="block" v-finger:touch-move="handleFinger">touchMove</div>
-    <div class="block" v-finger:touch-end="handleFinger">touchEnd</div>
-    <div class="block" v-finger:touch-cancel="handleFinger">touchCancel</div>
-    <div class="block" v-finger:pinch="handleFinger">pinch</div>
-    <div class="block" v-finger:press-move="handleFinger">pressMove</div>
-    <div class="block" v-finger:rotate="handleFinger">rotate</div>
-    <div class="block" v-finger:multipoint-start="handleFinger">multipointStart</div>
+    <lbd-vertical-swiper
+      ref="swiper"
+      audio="http://www.yinpin.com/upload/jiansheshengtaiyiju1009020.mp3"
+      :audio-image="require('./audio.svg')"
+    >
+      <lbd-vertical-swiper-slide
+        :index="0"
+        background-color="red"
+      >
+        <div class="page-1 animate__animated animate__slideInLeft">背景颜色案例</div>
+      </lbd-vertical-swiper-slide>
+      <lbd-vertical-swiper-slide
+        :background-image="require('./bg.jpg')"
+        :index="1"
+        background-color="yellow"
+      >
+        <div class="page-1 animate__animated animate__slideInLeft">背景图片案例</div>
+      </lbd-vertical-swiper-slide>
+      <lbd-vertical-swiper-slide
+        :index="2"
+        background-color="blue"
+        :no-swipe="noSwipe"
+      >
+        <div class="page-2 animate__animated animate__slideInRight">
+          <div>点击禁止滑动案例</div>
+          <div @click="noSwipe = !noSwipe">no swipe {{ noSwipe }}</div>
+        </div>
+      </lbd-vertical-swiper-slide>
+      <lbd-vertical-swiper-slide
+        :index="3"
+        background-color="green"
+      >
+        <div class="page-2 animate__animated animate__slideInRight">
+          <div @click="to">点击跳转第一页案例</div>
+        </div>
+      </lbd-vertical-swiper-slide>
+    </lbd-vertical-swiper>
   </div>
 </template>
 
 <script>
-import { Toast } from 'vant'
+import { VerticalSwiper, VerticalSwiperSlide } from 'lbd-ui'
+import 'animate.css'
 export default {
-  name: 'index',
+  name: 'example',
+  components: {
+    [VerticalSwiper.name]: VerticalSwiper,
+    [VerticalSwiperSlide.name]: VerticalSwiperSlide
+  },
   data: () => ({
-    time: new Date()
+    noSwipe: false,
   }),
   methods: {
-    handleFinger(e) {
-      Toast('trigger')
-    },
+    to() {
+      this.$refs['swiper'].swiperInstance.slideTo(0, 1000)
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.main-container {
-  position: relative;
+<style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page-1, .page-2 {
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-
-  .title {
-    color: $color-primary;
-  }
-
-  .block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: $color-primary;
-    margin-top: .1rem;
-    font-size: .32rem;
-    color: #fff;
-  }
+  font-size: .45rem;
+  color: #fff;
 }
 </style>

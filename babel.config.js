@@ -10,7 +10,8 @@ module.exports = {
     }, 'vant'],
     ['import', {
       libraryName: 'lbd-ui',
-      customName: name => `lbd-ui/src/${name[0].toUpperCase() + name.slice(1)}`
+      customName: name => `lbd-ui/src/${name}`,
+      camel2DashComponentName: false
     }, 'lbd-ui'],
   ]
 };
