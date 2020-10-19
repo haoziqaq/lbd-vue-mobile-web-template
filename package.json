@@ -17,7 +17,7 @@
     "exif-js": "^2.3.0",
     "fastclick": "^1.0.6",
     "lbd-oss-sdk": "^1.0.4",
-    "lbd-ui": "^1.1.0",
+    "lbd-ui": "^1.1.2",
     "lbd-wx-sdk": "^1.0.5",
     "normalize.css": "^8.0.1",
     "qrcodejs2": "^0.0.2",

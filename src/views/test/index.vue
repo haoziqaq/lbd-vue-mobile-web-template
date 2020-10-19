@@ -41,16 +41,18 @@
 </template>
 
 <script>
-import { VerticalSwiper, VerticalSwiperSlide } from 'lbd-ui'
+import { VerticalSwiper, VerticalSwiperSlide, Modal, Drawer } from 'lbd-ui'
 import 'animate.css'
 export default {
   name: 'example',
   components: {
     [VerticalSwiper.name]: VerticalSwiper,
-    [VerticalSwiperSlide.name]: VerticalSwiperSlide
+    [VerticalSwiperSlide.name]: VerticalSwiperSlide,
+    [Modal.name]: Modal,
+    [Drawer.name]: Drawer,
   },
   data: () => ({
-    noSwipe: false,
+    noSwipe: false
   }),
   methods: {
     to() {
@@ -64,6 +66,11 @@ export default {
 body {
   margin: 0;
   padding: 0;
+}
+
+.main-container {
+  width: 100%;
+  height: 200vh;
 }
 
 .page {
