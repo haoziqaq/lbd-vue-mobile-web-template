@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import VConsole from 'vconsole'
 import { vuePlugin } from "castle-haozijunqaq-utils";
-import { Toast, Dialog } from 'vant'
+import { Toast } from 'vant'
 import './components/componentRegister'
 import './utils/fixWechatBug'
 import './utils/rem'
@@ -16,7 +16,6 @@ Toast.setDefaultOptions('text', { className: 'lbd-z-index' });
 Toast.setDefaultOptions('success', { className: 'lbd-z-index' });
 Toast.setDefaultOptions('fail', { className: 'lbd-z-index' });
 Toast.setDefaultOptions('html', { className: 'lbd-z-index' });
-Dialog.setDefaultOptions({ className: 'lbd-z-index' })
 
 Vue.config.productionTip = false;
 
