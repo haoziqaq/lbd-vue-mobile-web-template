@@ -42,7 +42,6 @@
 
 <script>
 import { VerticalSwiper, VerticalSwiperSlide } from 'lbd-ui'
-import { Toast } from 'vant'
 import 'animate.css'
 export default {
   name: 'example',
