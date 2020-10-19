@@ -41,15 +41,14 @@
 </template>
 
 <script>
-import { VerticalSwiper, VerticalSwiperSlide, Modal, Drawer } from 'lbd-ui'
+import { VerticalSwiper, VerticalSwiperSlide } from 'lbd-ui'
+import { Toast } from 'vant'
 import 'animate.css'
 export default {
   name: 'example',
   components: {
     [VerticalSwiper.name]: VerticalSwiper,
-    [VerticalSwiperSlide.name]: VerticalSwiperSlide,
-    [Modal.name]: Modal,
-    [Drawer.name]: Drawer,
+    [VerticalSwiperSlide.name]: VerticalSwiperSlide
   },
   data: () => ({
     noSwipe: false
