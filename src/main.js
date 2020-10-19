@@ -11,7 +11,11 @@ import './utils/rem'
 import 'normalize.css'
 import './assets/scss/common.scss'
 
-Toast.setDefaultOptions('loading', { forbidClick: true, duration: 0 });
+Toast.setDefaultOptions('loading', { forbidClick: true, duration: 0, className: 'lbd-toast-z-index' });
+Toast.setDefaultOptions('text', { className: 'lbd-toast-z-index' });
+Toast.setDefaultOptions('success', { className: 'lbd-toast-z-index' });
+Toast.setDefaultOptions('fail', { className: 'lbd-toast-z-index' });
+Toast.setDefaultOptions('html', { className: 'lbd-toast-z-index' });
 
 Vue.config.productionTip = false;
 
