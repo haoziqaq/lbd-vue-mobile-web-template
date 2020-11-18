@@ -33,6 +33,19 @@
         height: 50px;
         animation: loading .6s infinite linear;
       }
+
+      #wechat-qrcode {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wechat-qrcode-tip {
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -44,6 +57,7 @@
     <div id="loading-modal">
       <img class="loading" src="./loading.png">
     </div>
+
     <script>
       window.onload = function () {
         var loadingModal = document.getElementById('loading-modal')

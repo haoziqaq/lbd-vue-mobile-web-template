@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { vueRouterUtils } from 'castle-haozijunqaq-utils'
+import { isWechatBrowser, showWechatQRCode } from '@/utils/ua'
 
 Vue.use(VueRouter)
 
@@ -18,6 +19,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   // TODO:进入路由前拦截
+  if (!isWechatBrowser()) {
+    showWechatQRCode()
+    return
+  }
   next()
 })
 
