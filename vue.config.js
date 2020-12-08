@@ -72,6 +72,12 @@ module.exports = {
   productionSourceMap: false,
   outputDir: OUTPUT_DIR,
   publicPath: createWebpackPublicPath(),
+  transpileDependencies: [
+    'lbd-ui',
+    'lbd-wx-sdk',
+    'lbd-oss-sdk',
+    'l'
+  ],
   devServer: {
     host: process.env.VUE_APP_HOST,
     port: process.env.VUE_APP_PORT,
@@ -85,9 +91,9 @@ module.exports = {
   },
   pluginOptions: {
     'style-resources-loader': {
-      preProcessor: 'scss',
+      preProcessor: 'less',
       patterns: [
-        path.resolve(__dirname, 'src/assets/scss/variable.scss')
+        path.resolve(__dirname, 'src/assets/less/variable.less')
       ]
     }
   },

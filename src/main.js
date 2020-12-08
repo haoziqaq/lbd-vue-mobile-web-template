@@ -9,7 +9,7 @@ import './components/componentRegister'
 import './utils/fixWechatBug'
 import './utils/rem'
 import 'normalize.css'
-import './assets/scss/common.scss'
+import './assets/less/common.less'
 
 Toast.setDefaultOptions('loading', { forbidClick: true, duration: 0, className: 'lbd-z-index' });
 Toast.setDefaultOptions('text', { className: 'lbd-z-index' });
