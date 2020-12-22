@@ -8,19 +8,22 @@
 
 <style scoped>
 .fade-enter {
-  opacity:0;
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
-.fade-leave{
-  opacity:1;
+.fade-leave {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.fade-enter-active{
-  transition:opacity .5s;
+.fade-enter-active {
+  transition: all .5s;
 }
 
 .fade-leave-active{
-  opacity:0;
-  transition:opacity .5s;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all .5s;
 }
 </style>
