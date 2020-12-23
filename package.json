@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "castle-haozijunqaq-utils": "^2.0.4",
+    "castle-haozijunqaq-utils": "2.0.4",
     "core-js": "^3.6.4",
     "exif-js": "^2.3.0",
     "fastclick": "^1.0.6",
