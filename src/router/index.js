@@ -19,10 +19,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   // TODO:进入路由前拦截
-  if (!isWechatBrowser()) {
-    showWechatQRCode()
-    return
-  }
+  // if (!isWechatBrowser()) {
+  //   showWechatQRCode()
+  //   return
+  // }
   next()
 })
 

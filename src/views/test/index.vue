@@ -110,11 +110,6 @@ body {
   padding: 0;
 }
 
-.main-container {
-  width: 100%;
-  height: 200vh;
-}
-
 .page {
   display: flex;
   flex-direction: column;
