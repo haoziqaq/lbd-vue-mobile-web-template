@@ -5,8 +5,19 @@ var config = {
   protocol: 'https',
   hostname: 'tools.goosdk.com',
   port: 443,
+  // /sockjs-node -> sap
+  // /sockjs-node2 -> sap2
+  // /sockjs-node3 -> sap3
   pathname: '/sockjs-node'
 }
+
+// http example
+// var config = {
+//   protocol: 'http',
+//   hostname: 'tools.goosdk.com',
+//   port: 80,
+//   pathname: '/sockjs-node'
+// }
 
 var url = require('url');
 

@@ -7,11 +7,6 @@ module.exports = {
       libraryName: 'vant',
       libraryDirectory: 'es',
       style: true
-    }, 'vant'],
-    ['import', {
-      libraryName: 'lbd-ui',
-      customName: name => `lbd-ui/src/${name}`,
-      camel2DashComponentName: false
-    }, 'lbd-ui'],
+    }, 'vant']
   ]
 };

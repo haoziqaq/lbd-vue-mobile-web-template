@@ -73,10 +73,8 @@ module.exports = {
   outputDir: OUTPUT_DIR,
   publicPath: createWebpackPublicPath(),
   transpileDependencies: [
-    'lbd-ui',
     'lbd-wx-sdk',
     'lbd-oss-sdk',
-    'l'
   ],
   devServer: {
     host: process.env.VUE_APP_HOST,
